@@ -1,19 +1,56 @@
-
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
 
   var currentDate=dayjs()
-  //allows us to get the current hour
+  //allows us to get the current hour goes from 0-23 in military time
   var currentHour=dayjs().hour()
 // static selector
   var currentDayEl=$("#currentDay")
 
-currentDayEl.text(currentDate.format("dddd, MMMM DD"))
+// time block is from 9 to 17
+//currentHour is 20
+  currentDayEl.text(currentDate.format("dddd, MMMM DD"))
 
-for(var i=9; i<17)
+for(var i=9; i<17; i++){
+   var parentId=$("#hour-" +i)
+   var textarea= parentId.children('textarea')
+   if(i===currentHour){ //present timeslot
+      textarea.addClass("present")
+   }
+    else if(i< currentHour){//this allows us to get the past timeslot
+      textarea.addClass("past")
+    } else{ //future timeslot
+      text.addClass("future")
+    }
+      
+}
 
+var saveBtnEl=$(".saveBtn")
+
+  function saveEvent(event){
+    var textareaEl
+    var parentId= $(event.target).parent().attr("id")
+    if($(event.target).attr("class")==="fas fa-save"){
+      var iEl= $(event.target)
+       textareaEl=iEl.parent().siblings('textarea')
+    }else{
+    
+    var buttonEl= $(event.target)// current selector
+    var textareaEl=buttonEl.siblings('textarea')
+    console.log(buttonEl, "current button")
+    console.log(textareaEl, "sibling of button")
+    }
+    localStorage.setItem(parentID, textareaEl.val() ) //stores data in browser
+  }
+
+  saveBtnEl.on("click", saveEvent)
+
+});
+
+
+
+// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+// the code isn't run until the browser has finished rendering all the elements
+// in the html.
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -32,4 +69,3 @@ for(var i=9; i<17)
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
