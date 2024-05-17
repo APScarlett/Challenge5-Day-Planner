@@ -1,0 +1,79 @@
+/*
+chosen fonts and sizes
+*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+/*
+ text area css
+*/
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: black;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+/*
+Description area keep simple
+*/
+.description {
+  white-space: pre-wrap;
+}
+/*
+Rounded time block
+*/
+.time-block {
+  border-radius: 15px;
+}
+
+/*
+Set top border properties for row
+*/
+.row {
+  border-top: 1px solid #ffffff;
+}
+/*
+white back ground black border
+*/
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+/*
+light grey for past
+*/
+.past {
+  background-color: #d3d3d3;
+  color: white;
+  border-radius: 15px;
+}
+/*
+red for present
+*/
+.present {
+  background-color: #ff6961;
+}
+/*
+green for future dates
+*/
+.future {
+  background-color: #77dd77;
+  color: white;
+  border-radius: 15px;
+}
+
+/*
+blue for the ave button 
+*/
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  background-color: #06aed5;
+  color:white;
+}
