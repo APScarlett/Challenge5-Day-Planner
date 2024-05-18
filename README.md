@@ -1,5 +1,5 @@
 # Challenge Challenge-5-Work Day Scheduler
-
+[![Image from Gyazo](https://i.gyazo.com/0c70b29a0a1bd990fb0d5222bf0272d2.png)](https://gyazo.com/0c70b29a0a1bd990fb0d5222bf0272d2)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
  ## Description
