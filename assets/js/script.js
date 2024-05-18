@@ -19,9 +19,10 @@ for(var i=9; i<17; i++){
     else if(i< currentHour){//this allows us to get the past timeslot
       textarea.addClass("past")
     } else{ //future timeslot
-      text.addClass("future")
+      textarea.addClass("future")
     }
-      
+    var value=localStorage.getItem("hour-" + i)  
+    textarea.val(value)
 }
 
 var saveBtnEl=$(".saveBtn")
@@ -39,7 +40,7 @@ var saveBtnEl=$(".saveBtn")
     console.log(buttonEl, "current button")
     console.log(textareaEl, "sibling of button")
     }
-    localStorage.setItem(parentID, textareaEl.val() ) //stores data in browser
+    localStorage.setItem(parentId, textareaEl.val() ) //stores data in browser
   }
 
   saveBtnEl.on("click", saveEvent)
